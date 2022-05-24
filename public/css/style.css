@@ -1,0 +1,109 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: 1px solid red;
+    
+}
+
+body{
+    font-size: 100%;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px;
+    border: 1px solid red;
+}
+
+#menu{
+    display: flex;
+    justify-content: center;
+    gap: 32px;
+}
+
+#banner{
+    height: 700px;
+    display: flex;
+    align-items: flex-end;
+    background-color: aquamarine;
+}
+
+#banner a{
+    padding: 10px;
+    border: 1px solid red;
+    border-radius: 15px;
+    margin: 100px;
+}
+
+#opcoes-pagamento{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    margin: 25px;
+}
+
+#mais-procurados {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    padding: 20px;
+}
+#mais-procurados div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-around;
+    height: 250px;
+    border: 1px solid gray;
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+
+}
+#motivos{
+    font-size: 20px;
+}
+
+#motivos h3{
+    padding: 10px 0px;
+}
+
+#box-registro{
+    display: flex;
+    justify-content: center;
+}
+
+#box-registro form{
+    width: 500px;
+    height: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+    margin: 20px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+    
+}
+#box-registro form input{
+    width: 450px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid gray;
+}
+
+#box-registro form button{
+    width: 200px;
+    height: 40px;
+    background-color: grey;
+    border: 1px solid gray;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
+}
+
