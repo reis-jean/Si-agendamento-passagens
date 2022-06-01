@@ -25,14 +25,27 @@
                 <input type="password" placeholder="Senha" name="senha">
                 <button type="submit">Inscrever-se ou logar </button>
 
-                <?php if($this->view->erroCadastro ) { ?>
+                <?php if($this->view->erroCadastro == 'existente') { ?>
+                    <small > Já existe um perfil com esse e-mail, Deseja jogar ? </small>
+                    <a href="/entrar">Logar</a>
+
+                <?php } elseif($this->view->erroCadastro == 'incompleto') { ?>
 
                     <small > *Erro ao tentar realizar o cadastro, verifique os campos preenchidos </small>
-
-                <?php } ?> 
-                    
+                <?php } ?>
+                <a href="#openModal">Open Modal</a>
             </form>
+            
+            <div id="openModal" class="modal">
+                <a href="#close" title="Fechar" class="close">x</a>
+                <h2>Janela Modal</h2>
+                <p>Esta é uma simples janela de modal.</p>
+                <p>Você pode fazer qualquer coisa aqui, página de Login, pop-ups, ou formulários</p>    
+            </div>
         </div>
+        
+
+       
         </main>
     <footer id="rodape">
         Cabeçalho

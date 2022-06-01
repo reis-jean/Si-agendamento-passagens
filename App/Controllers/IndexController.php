@@ -20,7 +20,7 @@ class IndexController extends Action {
 			'senha' => '',
 		);
 
-		$this->view->erroCadastro = false ;
+		$this->view->erroCadastro = 'false';
 
 		$this->render('inscreverse');
 	}
@@ -33,28 +33,7 @@ class IndexController extends Action {
 		$usuario->__set('email', $_POST['email']);
 		$usuario->__set('senha', md5($_POST['senha']));
 		
-		
-		if($usuario->validarCadastro() && count($usuario->getUsuarioPorEmail()) == 0){
-			
-			//registrar usuario no banco!
-			$usuario->salvar();
-			
-			//Logar usuario
-			$usuario->autenticar();
-			if($usuario->__get('id') != '' && $usuario->__get('nome')){
-	
-				session_start();
-	
-				$_SESSION['id'] = $usuario->__get('id');
-				$_SESSION['nome'] = $usuario-> __get('nome');
-	
-				header('Location: /perfil');
-	
-			}else{
-				header('Location: /?login=erro');
-			}
-		
-		}else {
+		if($usuario->validarCadastro() == false){
 
 			$this->view->usuario = array(
 				'nome' => $_POST['nome'],
@@ -62,9 +41,21 @@ class IndexController extends Action {
 				'senha' => $_POST['senha'],
 			);
 
-			$this->view->erroCadastro = true;
-
+			$this->view->erroCadastro = 'incompleto';
 			$this->render('inscreverse');
+
+		}
+		elseif(count($usuario->getUsuarioPorEmail()) != 0){
+			$this->view->erroCadastro = 'existente';
+			$this->render('inscreverse');
+	
+		}else {
+
+			//registrar usuario no banco!
+			$usuario->salvar();
+			
+			//Logar usuario
+			$usuario->autenticar();
 			
 		}
 	}

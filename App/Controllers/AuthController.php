@@ -8,6 +8,8 @@ use MF\Model\Container;
 class AuthController extends Action{
 
     public function autenticar(){
+        
+		$this->view->erroautenticar = false;
 
         $usuario = container::getModel('Usuario');
 
@@ -25,7 +27,8 @@ class AuthController extends Action{
             header('Location: /perfil');
 
         }else{
-            header('Location: /?login=erro');
+            $this->view-> erroautenticar = true;
+            header('Location: /login=erro');
         }
         
     }
