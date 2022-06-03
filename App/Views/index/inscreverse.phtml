@@ -37,10 +37,23 @@
             </form>
             
             <div id="openModal" class="modal">
-                <a href="#close" title="Fechar" class="close">x</a>
-                <h2>Janela Modal</h2>
-                <p>Esta é uma simples janela de modal.</p>
-                <p>Você pode fazer qualquer coisa aqui, página de Login, pop-ups, ou formulários</p>    
+                <a href="#fechar" title="Fechar" class="close">x</a>
+                <form action="/registrarCampanhia" method="post">
+                    <input type="text" placeholder="Razão social/Nome" name="razao">
+                    <input type="text" placeholder="CNPJ" name="cnpj">
+                    <input type="text" placeholder="E-mail" name="email">
+                    <input type="password" placeholder="Senha" name="senha">
+                    <button type="submit">Inscrever-se e Logar </button>
+
+                    <?php if($this->view->erroCadastro == 'existente') { ?>
+                        <small > Já existe um perfil com esse e-mail, Deseja jogar ? </small>
+                        <a href="/entrar">Logar</a>
+
+                    <?php } elseif($this->view->erroCadastro == 'incompleto') { ?>
+
+                        <small > *Erro ao tentar realizar o cadastro, verifique os campos preenchidos </small>
+                    <?php } ?>
+                </form>   
             </div>
         </div>
         

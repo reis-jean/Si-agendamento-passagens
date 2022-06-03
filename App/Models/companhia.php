@@ -21,7 +21,7 @@ class Companhia extends Model{
     }
 
     public function salvar(){
-        $query = "insert into companhia(razao, email, senha, cnpj)values(:razao, :email, :senha, :cnpj)";
+        $query = "insert into companhia(razao, cnpj, email, senha)values(:razao, :cnpj, :email, :senha)";
         $stmt = $this->db->prepare($query);
         $stmt -> bindValue(':razao', $this->__get('razao'));
         $stmt -> bindValue(':email', $this->__get('email'));
@@ -32,7 +32,7 @@ class Companhia extends Model{
         return $this;
     }
 
-    public function validarCompanhia(){
+    public function validarCadastro(){
         
         $valido = true;
 
@@ -48,6 +48,23 @@ class Companhia extends Model{
             $valido = false;
         }
 
+        return $valido;
+
+    }
+
+    public function getCompanhiaPorEmail(){
+        
+        //faz a recuperação do por email 
+        
+        $query = "select razao, email from companhia where email = :email";
+        $stmt = $this->db->prepare($query);
+        $stmt ->bindValue(':email', $this->__get('email'));
+        $stmt -> execute();        
+        
+        
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+      
     }
 
 
