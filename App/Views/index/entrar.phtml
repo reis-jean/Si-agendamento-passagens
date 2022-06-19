@@ -1,33 +1,55 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>TopLine Viagens</title>
-</head>
-<body>
-    <header>
-        <div id="logo">
-            <h1>logo</h1>
-        </div>
-        <nav id="menu">
-            
-        </nav>
-    </header>
-    <main>
-        <div id="box-registro">
-            <form action="/autenticar" method="post">
-                <input type="text" placeholder="E-mail" name="email">
-                <input type="password" placeholder="Senha" name="senha">
-                <button type="submit">logar</button>
-            </form>
-        </div>
-    </main>
-    <footer id="rodape">
-        Cabeçalho
-    </footer>
+<header>
+    <div id="logo">
+        <img src="/img/logo-topbus.png" alt="">
+    </div>
+    <nav id="menu">
+        <a href="/entrarCompanhia">Logar como Companhia</a>
+    </nav>
+</header>
+<main>
+    <div id="box-registro">
+        <form action="/autenticar" method="post">
+            <input type="text" placeholder="E-mail" name="email">
+            <input type="password" placeholder="Senha" name="senha">
+            <button type="submit">logar</button>
+            <button><a href="inscreverse">Registrar-se</a></button>
+            <?php if($this->view->erroAutUsuario == 'erro') { ?>
+                <small> **Erro ao logar!! E-mail ou senha invalidos</small>
+            <?php } ?>
+                
+            <!--*** erro autenticar -->
+        </form>
+    </div>
+</main>
+<footer id="rodape">
     
-</body>
-</html>
+    <nav>
+        <h3>Institucional</h3>
+        
+        <a href="">Aplicativo</a>
+        <a href="">Política de Privacidade</a>
+        <a href="">Termos de Uso</a>
+        <a href="">Política de Cookies</a>
+    </nav>
+    <nav>
+        <h3>Categorias</h3> 
+        <a href="">Destinos</a>
+        <a href="">Glossário</a>
+        <a href="">Rodoviárias</a>
+        <a href="">Viações</a>
+    </nav>
+    <nav>
+        <h3>Business</h3> 
+        <a href="">Programa de Afiliados</a>
+        <a href="">Parcerias</a>
+        <a href="">App Android</a>
+        <a href="">App IOS</a>
+    </nav>
+    <div >
+        <nav id="sac">
+            <h2>  Tem duvidas? </h2>
+            <a href="">🎧 Entre em contato conosco</a>
+            <p>De segunda à sexta das 09h às 18h. Sábado, domingo e feriado das 09h às 16h.</p>
+        </nav>
+    </div>
+</footer>

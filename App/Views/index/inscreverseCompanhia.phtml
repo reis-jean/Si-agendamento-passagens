@@ -1,3 +1,4 @@
+
 <header>
     <div id="logo">
         <img src="/img/logo-topbus.png" alt="">
@@ -9,15 +10,16 @@
 </header>
 <main>
     <div id="box-registro">
-        <form action="/registrar" method="post">
-            <input type="text" placeholder="Seu Nome" name="nome">
+        <form action="/registrarCompanhia" method="post">
+            <input type="text" placeholder="Razao social" name="razao">
+            <input type="text" placeholder="CNPJ" name="cnpj">
             <input type="text" placeholder="E-mail" name="email">
             <input type="password" placeholder="Senha" name="senha">
-            <button type="submit">Inscrever-se ou logar </button>
+            <button type="submit">Inscrever-se</button>
 
             <?php if($this->view->erroCadastro == 'existente') { ?>
                 <small > Já existe um perfil com esse e-mail, Deseja jogar ? </small>
-                <a href="/entrar">Logar</a>
+                <a href="/entrarCompanhia">Logar</a>
 
             <?php } elseif($this->view->erroCadastro == 'incompleto') { ?>
 
@@ -25,6 +27,9 @@
             <?php } ?>
         </form>
     </div>
+    
+
+    
     </main>
     <footer id="rodape">
     

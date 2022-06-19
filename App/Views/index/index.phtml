@@ -1,93 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <title>TopLine Viagens</title>
-</head>
-<body>
-    <header>
-        <div id="logo">
-            <img src="/img/logo-topbus.png" alt="">
+<header>
+    <a id="logo" href="">
+        <img src="/img/logo-topbus.png" alt="">
+    </a>
+    <nav id="menu">
+        <a href="/entrar">Entrar</a>
+        <a href="/inscreverse">Registra-se</a>
+    </nav>
+</header>
+<main>
+    <section id="banner">
+        <div id="tituloBaner">
+            <p> Aqui você encontra</p>
+            <span> + 4 mil destinos</span>
+            <a href="#">Procurar Viagem</a> 
         </div>
-        
-        <nav id="login">
-            <a href="/entrar">Entrar</a>
-            <a href="/inscreverse">registra-se</a>
-        </nav>
-    </header>
-    <main>
-        <section id="banner">
-            <a href="#">Procurar Viagem</a>   
-            <img src="/img/embarque.png" >          
-        </section>
-        <section id="opcoes-pagamento">
-            <h3>Escolha a melhor data</h3>
-            <h3>Parcele em até 3x</h3>
-            <h3>Compra 100% segura</h3>
-        </section>
+        <img src="/img/embarque.png" >           
+    </section>
+    <section id="painel-cards">
+        <h3 class="cards">Escolha a melhor data</h3>
+        <h3 class="cards">Parcele em até 3x</h3>
+        <h3 class="cards">Compra 100% segura</h3>
+    </section>
 
-        <section id="destino-procurados">
-            <h2>Destinos mais Procurados</h2>
-            <div id="mais-procurados">
-                <div >
-                    <h3>Para Belo Horizonte</h3>
-                    <h4>Saindo De: </h4>
-                    <p>Rio de Janeiro</p>
-                    <p>Cabo Frio</p>
-                    <p>São Paulo</p>
-                </div>
-                <div >
-                    <h3>Para Brasília</h3>
-                    <h4>Saindo De: </h4>
-                    <p>Rio de Janeiro</p>
-                    <p>Cabo Frio</p>
-                    <p>São Paulo</p>
-                </div>
-                <div >
-                    <h3>Para Brasília</h3>
-                    <h4>Saindo De: </h4>
-                    <p>Rio de Janeiro</p>
-                    <p>Cabo Frio</p>
-                    <p>São Paulo</p>
-                </div>
-                <div >
-                    <h3>Para Brasília</h3>
-                    <h4>Saindo De: </h4>
-                    <p>Rio de Janeiro</p>
-                    <p>Cabo Frio</p>
-                    <p>São Paulo</p>
-                </div>
+    <section id="destino-procurados">
+        <h1>Destinos mais Procurados</h1>
+        <div id="mais-procurados">
+            <div class="cards"  >
+                <h3>Para Belo Horizonte</h3>
+                <h4>Saindo De: </h4>
+                <p>Rio de Janeiro</p>
+                <p>Cabo Frio</p>
+                <p>São Paulo</p>
             </div>
-        </section>
+            <!--
+            <div class="cards">
+                <h3>Para Brasília</h3>
+                <h4>Saindo De: </h4>
+                <p>Rio de Janeiro</p>
+                <p>Cabo Frio</p>
+                <p>São Paulo</p>
+            </div>
+            <div class="cards">
+                <h3>Para Brasília</h3>
+                <h4>Saindo De: </h4>
+                <p>Rio de Janeiro</p>
+                <p>Cabo Frio</p>
+                <p>São Paulo</p>
+            </div>
+            <div class="cards">
+                <h3>Para Brasília</h3>
+                <h4>Saindo De: </h4>
+                <p>Rio de Janeiro</p>
+                <p>Cabo Frio</p>
+                <p>São Paulo</p>
+            </div>
+            -->
+        </div>
+    </section>
 
-        <section id="motivos">
-
+    <section id="motivos">
+        <div >
             <h3><strong> Barato</strong></h3>
             <p>Viagens de ônibus por <strong> até menos da metade do preço das passagens de rodoviária.</strong>
                 Sem taxas de serviços ou surpresas no pagamento. É inovação a serviço do consumidor,
                 com qualidade e preço justo
             </p>
-            
+        </div>
+        <hr>
+        <div>
             <h3> <strong>Seguro</strong></h3>
             <p>
                 <strong> Empresas de ônibus e motoristas certificados pela ANTT. </strong> de vida grátis e 
                 ônibus com tecnologias de segurança exclusivas: câmeras de fadiga, telemetria e 
                 sensores de cinto de segurança.
             </p>
+        </div>
+        <hr>
+        <div>
             <h3><strong> Mais prático </strong></h3>
             <p>
                 Você escolhe embarcar na rodoviária ou em um ponto exclusivo da Buser. Nos 
                 exclusivos, você precisa apenas de um documento com foto para viajar. É só 
                 reservar pelo site ou app e não precisa imprimir nada. <strong> filas, sem burocracias. </strong>
             </p>
-        </section>
-    </main>
-    <footer id="rodape">
-        Cabeçalho
-    </footer>
+        </div>
+    </section>
+</main>
+<footer id="rodape">
     
-</body>
-</html>
+    <nav>
+        <h3>Institucional</h3>
+        
+        <a href="">Aplicativo</a>
+        <a href="">Política de Privacidade</a>
+        <a href="">Termos de Uso</a>
+        <a href="">Política de Cookies</a>
+    </nav>
+    <nav>
+        <h3>Categorias</h3> 
+        <a href="">Destinos</a>
+        <a href="">Glossário</a>
+        <a href="">Rodoviárias</a>
+        <a href="">Viações</a>
+    </nav>
+    <nav>
+        <h3>Business</h3> 
+        <a href="">Programa de Afiliados</a>
+        <a href="">Parcerias</a>
+        <a href="">App Android</a>
+        <a href="">App IOS</a>
+    </nav>
+    <div >
+        <nav id="btn-logincompanhia">
+            <a href="/entrarCompanhia">Logar ou registrar-se como Companhia Parceira</a>
+        </nav>
+        <nav id="sac">
+            <h2>  Tem duvidas? </h2>
+            <a href="">🎧 Entre em contato conosco</a>
+            <p>De segunda à sexta das 09h às 18h. Sábado, domingo e feriado das 09h às 16h.</p>
+        </nav>
+    </div>
+</footer>
+    

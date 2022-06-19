@@ -3,30 +3,25 @@
         <img src="/img/logo-topbus.png" alt="">
     </div>
     <nav id="menu">
-        <a href="#">Sobre Nós</a>
-        <a href="#">Ajuda</a>
+        
     </nav>
 </header>
 <main>
     <div id="box-registro">
-        <form action="/registrar" method="post">
-            <input type="text" placeholder="Seu Nome" name="nome">
+        <form action="/autenticarCompanhia" method="post">
             <input type="text" placeholder="E-mail" name="email">
             <input type="password" placeholder="Senha" name="senha">
-            <button type="submit">Inscrever-se ou logar </button>
-
-            <?php if($this->view->erroCadastro == 'existente') { ?>
-                <small > Já existe um perfil com esse e-mail, Deseja jogar ? </small>
-                <a href="/entrar">Logar</a>
-
-            <?php } elseif($this->view->erroCadastro == 'incompleto') { ?>
-
-                <small > *Erro ao tentar realizar o cadastro, verifique os campos preenchidos </small>
+            <button type="submit">logar</button>
+            <button><a href="inscreverseCompanhia">Registrar-se</a></button>
+            <?php if($this->view->erroAutCompanhia ==  'erro') { ?>
+                <small> **Erro ao logar!! Email ou senha invalidos</small>
             <?php } ?>
+            
+            <!--*** erro autenticar -->
         </form>
     </div>
-    </main>
-    <footer id="rodape">
+</main>
+<footer id="rodape">
     
     <nav>
         <h3>Institucional</h3>

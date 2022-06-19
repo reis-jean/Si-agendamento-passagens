@@ -3,30 +3,18 @@
         <img src="/img/logo-topbus.png" alt="">
     </div>
     <nav id="menu">
-        <a href="#">Sobre Nós</a>
-        <a href="#">Ajuda</a>
+        <p>Bem vindo(a) Companhia <?php print_r($_SESSION['razao']) ?></p>
     </nav>
 </header>
 <main>
-    <div id="box-registro">
-        <form action="/registrar" method="post">
-            <input type="text" placeholder="Seu Nome" name="nome">
-            <input type="text" placeholder="E-mail" name="email">
-            <input type="password" placeholder="Senha" name="senha">
-            <button type="submit">Inscrever-se ou logar </button>
+    <h1>Login Realizado com sucesso!</h1>
+    <h1>Companhia</h1>
 
-            <?php if($this->view->erroCadastro == 'existente') { ?>
-                <small > Já existe um perfil com esse e-mail, Deseja jogar ? </small>
-                <a href="/entrar">Logar</a>
+    
 
-            <?php } elseif($this->view->erroCadastro == 'incompleto') { ?>
-
-                <small > *Erro ao tentar realizar o cadastro, verifique os campos preenchidos </small>
-            <?php } ?>
-        </form>
-    </div>
-    </main>
-    <footer id="rodape">
+    <a href="/sair">Sair</a>
+</main>
+<footer id="rodape">
     
     <nav>
         <h3>Institucional</h3>
@@ -58,3 +46,4 @@
         </nav>
     </div>
 </footer>
+    

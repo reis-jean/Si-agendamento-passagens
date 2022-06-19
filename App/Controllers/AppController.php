@@ -9,9 +9,7 @@ class AppController extends Action{
 
     public function perfil(){
         $this->validarAutenticacao();
-
         $usuario = ModelContainer::getModel("Usuario");
-        
         $this->render('perfil');
     }
 
@@ -22,6 +20,22 @@ class AppController extends Action{
             header('Location: /?login=erro');
         }
 
+    }
+   
+    public function perfilCompanhia(){
+
+        session_start();
+
+        if($_SESSION['id'] && $_SESSION['razao']){
+            $this->render('perfilCompanhia');
+        }else{
+            header('Location: /?login=erro');
+        }
+
+        
+       // $companhia = ModelContainer::getModel("Companhia");
+       
+        //$this->render('perfilCompanhia');
     }
 }
 

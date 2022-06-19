@@ -8,9 +8,10 @@ class Companhia extends Model{
 
     private $id;
     private $razao;
+    private $cnpj;
     private $email;
     private $senha;
-    private $cnpj;
+   
 
     public function __get($atributo){
         return $this->$atributo;
@@ -60,13 +61,24 @@ class Companhia extends Model{
         $stmt = $this->db->prepare($query);
         $stmt ->bindValue(':email', $this->__get('email'));
         $stmt -> execute();        
-        
-        
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
-
-      
     }
 
+    public function autenticarCompanhia(){
 
+        $query = 'select id, razao, email from companhia where email = :email and senha = :senha';
+        $stmt = $this-> db-> prepare($query);
+
+        $stmt -> bindValue(':email', $this->__get('email'));
+        $stmt->bindValue(':senha', $this->__get('senha'));
+        $stmt->execute();
+
+        $companhia = $stmt->fetch(\PDO::FETCH_ASSOC);
+
+        if($companhia['id'] != '' && $companhia['razao'] !=''){
+            $this->__set('id', $companhia['id']);
+            $this->__set('razao', $companhia['razao']);
+        }
+        return $this;
+    }
 }
-

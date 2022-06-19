@@ -65,7 +65,7 @@ class Usuario extends Model{
       
     }
 
-    public function autenticar(){
+    public function autenticarUsuario(){
 
         $query = 'select id, nome, email from usuarios where email = :email and senha = :senha';
         $stmt = $this-> db-> prepare($query);
@@ -86,14 +86,4 @@ class Usuario extends Model{
 
     }
     
-
-
-    
-
-
-
-
-
-
-
 }

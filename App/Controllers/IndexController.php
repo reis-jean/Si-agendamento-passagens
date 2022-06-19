@@ -8,10 +8,11 @@ use MF\Model\Container;
 
 class IndexController extends Action {
 
-	public function index() {
-
+	public function index() {		
 		$this->render('index');
 	}
+
+	//cadastro do usuario
 
 	public function inscreverse(){
 		$this->view->usuario = array(
@@ -55,9 +56,26 @@ class IndexController extends Action {
 			$usuario->salvar();
 			
 			//Logar usuario
-			$usuario->autenticar();
+			$this->render('entrar');
 			
+
 		}
+	}
+
+
+	
+	//cadastro companhia
+	public function inscreverseCompanhia(){
+		$this->view->usuario = array(
+			'razao' => '',
+			'cnpj' => '',
+			'email' => '',
+			'senha' => ''
+		);
+
+		$this->view->erroCadastro = 'false';
+
+		$this->render('inscreverseCompanhia');
 	}
 
 	public function registrarCompanhia(){
@@ -71,7 +89,7 @@ class IndexController extends Action {
 		
 		if($companhia->validarCadastro() == false){
 
-			$this->view->usuario = array(
+			$this->view->companhia = array(
 				'razao' => $_POST['razao'],
 				'cnpj' => $_POST['cnpj'],
 				'email' => $_POST['email'],
@@ -79,21 +97,20 @@ class IndexController extends Action {
 			);
 
 			$this->view->erroCadastro = 'incompleto';
-			$this->render('inscreverse');
+			$this->render('inscreverseCompanhia');
 
 		}
 		elseif(count($companhia->getCompanhiaPorEmail()) != 0){
 			$this->view->erroCadastro = 'existente';
-			$this->render('inscreverse');
+			$this->render('inscreverseCompanhia');
 	
 		}else {
 
-			//registrar usuario no banco!
+			//registrar Companhia no banco!
 			$companhia->salvar();
-			echo ('DEu certo');
 			
-			//Logar usuario
-			//$companhia->autenticar();
+			//Logar Companhia
+			$this->render('entrarCompanhia');
 			
 		}
 	}
@@ -101,7 +118,17 @@ class IndexController extends Action {
 	
 
 	public function entrar(){
+
+		$this->view->erroAutUsuario = isset($_GET['erroAutUsuario']) ? $_GET['erroAutUsuario'] : '';
+
 		$this->render('entrar');
+	}
+
+	public function entrarCompanhia(){
+
+		$this->view->erroAutCompanhia = isset($_GET['erroAutCompanhia']) ? $_GET['erroAutCompanhia'] : '';
+
+		$this->render('entrarCompanhia');
 	}
 
 }
