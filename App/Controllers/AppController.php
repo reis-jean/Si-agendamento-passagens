@@ -37,6 +37,17 @@ class AppController extends Action{
        
         //$this->render('perfilCompanhia');
     }
+
+    public function pesquisarViagem(){
+
+        $this->render('pesquisarViagem');
+    }
+
+    public function formPesquisa(){
+
+        $this->render('formPesquisa');
+    }
+
 }
 
 

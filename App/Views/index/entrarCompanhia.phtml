@@ -7,19 +7,19 @@
     </nav>
 </header>
 <main>
-    <div id="box-registro">
+    <section id="box-registro">
         <form action="/autenticarCompanhia" method="post">
+            <h1>Olá parceiro!</h1>
             <input type="text" placeholder="E-mail" name="email">
             <input type="password" placeholder="Senha" name="senha">
             <button type="submit">logar</button>
             <button><a href="inscreverseCompanhia">Registrar-se</a></button>
             <?php if($this->view->erroAutCompanhia ==  'erro') { ?>
                 <small> **Erro ao logar!! Email ou senha invalidos</small>
+                <!--*** erro autenticar -->
             <?php } ?>
-            
-            <!--*** erro autenticar -->
         </form>
-    </div>
+    </section>
 </main>
 <footer id="rodape">
     

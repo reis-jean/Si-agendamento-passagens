@@ -67,7 +67,14 @@ class Route extends Bootstrap {
 			'action' => 'autenticarCompanhia'
 		);
 
+		//fazer logout
+		$routes['sair'] = array(
+			'route' => '/sair',
+			'controller' => 'AuthController',
+			'action' => 'sair'
+		);
 
+		// perfil usuario
 		$routes['perfil'] = array(
 			'route' => '/perfil',
 			'controller' => 'AppController',
@@ -81,11 +88,19 @@ class Route extends Bootstrap {
 			'action' => 'perfilCompanhia'
 		);
 
-		$routes['sair'] = array(
-			'route' => '/sair',
-			'controller' => 'AuthController',
-			'action' => 'sair'
+		//pesquisar Viagens
+		$routes['pesquisarViagem'] = array(
+			'route' => '/pesquisarViagem',
+			'controller' => 'AppController',
+			'action' => 'pesquisarViagem'
 		);
+
+		$routes['formPesquisa'] = array(
+			'route' => '/formPesquisa',
+			'controller' => 'AppController',
+			'action' => 'formPesquisa'
+		);
+		
 		
 		
 		$this->setRoutes($routes);

@@ -4,21 +4,54 @@
     </div>
     <nav id="menu">
         <p>Bem vindo(a) Companhia <?php print_r($_SESSION['razao']) ?></p>
+        <a href="/sair">Sair</a>
     </nav>
 </header>
 <main>
+    <section id="banner">
+        <div class="cards">
+            <a href="#abrirModal">Cadastrar Viagem</a>
+            <div id="abrirModal" class="modal">
+                <div>
+                    <a href="#fechar" title="Fechar" class="fechar">x</a>
+                    <form id="cadastroViagem" action="">
+                        <input type="text" placeholder="Origem">
+                        <input type="text" placeholder="Destino">
+                        <div>
+                            <span>Data da Ida:</span>
+                            <input type="date" placeholder="dataIda">                    
+                        </div>
+                        <div>
+                            <span>Data da Volta: </span>
+                            <input type="date" placeholder="dataVolta">                    
+                        </div>
+                        <div>
+                            <span>Hora da saida: </span>
+                            <input type="time" placeholder="dataIda">                    
+                        </div>
+                        <div>
+                            <span>Hora da chegada: </span>
+                            <input type="time" placeholder="dataVolta">                    
+                        </div>
+                        <input type="number" placeholder="Valor da Passagem"> 
+                        <input type="number" placeholder="Quantidade de Poltronas">                                       
+                        <button type="submit">Cadastrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="cards">
+            <h1>Dashborading de vendas</h1>
+        </div>
+
+    </section>
     <h1>Login Realizado com sucesso!</h1>
     <h1>Companhia</h1>
-
-    
-
-    <a href="/sair">Sair</a>
+   
 </main>
 <footer id="rodape">
-    
     <nav>
         <h3>Institucional</h3>
-        
         <a href="">Aplicativo</a>
         <a href="">Política de Privacidade</a>
         <a href="">Termos de Uso</a>

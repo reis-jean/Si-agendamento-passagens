@@ -21,8 +21,7 @@ header{
     align-items: center;
     justify-content: space-between;
     padding: 24px;
-    
-   
+
 }
 #logo{
     max-width: 30%;
@@ -158,28 +157,6 @@ header{
     border-bottom-right-radius: 10px;
     font-size: 1.5rem;
 }
-@media only screen and  (max-width: 730px){
-    
-    #banner img {
-        display: none;
-    }
-    #tituloBaner{
-        width: 80%;
-    }
-    #tituloBaner span{
-        font-size: 1.5em;
-        text-align: right;
-    }
-    #rodape{
-        display: flex;
-        flex-direction: column;
-    }
-    #rodape nav h3{
-    margin-top: 2%;
-    margin-bottom: 0%;
-    }
-}
-
 #btn-logincompanhia{
     text-align: center;
     margin: 10px;
@@ -216,21 +193,129 @@ header{
     gap: 50px;
     margin: 20px;
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
-    
+}
+#box-registro h1{
+    color: #FFA300;
 }
 #box-registro form input{
     width: 450px;
     height: 40px;
     border-radius: 5px;
-    border: 1px solid gray;
 }
 
 #box-registro form button{
     width: 200px;
     height: 40px;
     background-color: grey;
-    border: 1px solid gray;
     border-radius: 10px;
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
+#bannerPesquisa{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#cardformPesquisa{
+    width: 90%;
+    border-radius: 10px;
+    background-color: #FFA300;
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+}
+#cardformPesquisa object{
+    width: 100%;
+}
+#formPesquisa{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 3rem;
+}
 
+#formPesquisa input{ 
+    width: 30%;
+    height: 50px;    
+    font-size: 1rem;
+    border-radius: 3px;
+}
+
+#formPesquisa button{
+    width: 20%;
+    height: 50px;
+    font-size: 0.8rem;
+    border-radius: 5px;
+
+}
+
+@media only screen and  (max-width: 730px){
+    
+    #banner img {
+        display: none;
+    }
+    #tituloBaner{
+        width: 80%;
+    }
+    #tituloBaner span{
+        font-size: 1.5em;
+        text-align: right;
+    }
+    #rodape{
+        display: flex;
+        flex-direction: column;
+    }
+    #rodape nav h3{
+    margin-top: 2%;
+    margin-bottom: 0%;
+    }
+}
+
+
+@media only screen and  (max-width: 560px){
+    
+    
+#logo {
+    display: none;
+}
+header{
+    justify-content: flex-end;
+
+}
+}
+.modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(255, 255, 255, 0.8);
+    z-index: 99999;
+    opacity:0;
+    -webkit-transition: opacity 400ms ease-in;
+    -moz-transition: opacity 400ms ease-in;
+    transition: opacity 400ms ease-in;
+    pointer-events: none;
+  }
+  .modal:target {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .modal > div {
+    width: 60%;
+    position: relative;
+    margin: 10% auto;
+    padding: 15px 20px;
+    background: rgb(163, 161, 161);
+  }
+
+  .fechar {
+    position: relative;
+    bottom: 20;
+    left: 75%;
+    width: 10%;
+    text-align: center;
+    margin-top: 5px;
+    font-size: 16px;
+  }

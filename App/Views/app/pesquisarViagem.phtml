@@ -1,34 +1,20 @@
-
-    <header>
-        <div id="logo">
-            <img src="/img/logo-topbus.png" alt="">
-        </div>
-        <nav id="menu">
-            <p>Bem vindo(a) <?php print_r($_SESSION['nome']) ?></p>
-            <a href="">Minhas Viagens</a>
-            <a href="/sair">Sair</a>
-        </nav>
-    </header>
-    <main>
-        <section id="banner">
-            <div class="cards ">
-                <h1>Viagens com preços Exclusivos </h1>
-            </div>
-        </section>
-        <section id="bannerPesquisa">
-            <div id="cardformPesquisa">
-                <object data="formPesquisa" type=""></object>
-            </div>
-        </section>
-    </main>
-
-
-
-    <footer id="rodape">
-    
+<header>
+    <a id="logo" href="#">
+        <img src="/img/logo-topbus.png" alt="">
+    </a>
+    <nav id="menu">
+        <a href="/entrar">Entrar</a>
+        <a href="/inscreverse">Registra-se</a>
+    </nav>
+</header>
+<main>
+    <section>
+        <object data="formPesquisa"></object>
+    </section>
+</main>
+<footer id="rodape">
     <nav>
         <h3>Institucional</h3>
-        
         <a href="">Aplicativo</a>
         <a href="">Política de Privacidade</a>
         <a href="">Termos de Uso</a>
@@ -49,6 +35,9 @@
         <a href="">App IOS</a>
     </nav>
     <div >
+        <nav id="btn-logincompanhia">
+            <a href="/entrarCompanhia">Logar ou registrar-se como Companhia Parceira</a>
+        </nav>
         <nav id="sac">
             <h2>  Tem duvidas? </h2>
             <a href="">🎧 Entre em contato conosco</a>
