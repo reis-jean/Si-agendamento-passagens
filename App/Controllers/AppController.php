@@ -33,9 +33,9 @@ class AppController extends Action{
         }
 
         
-       // $companhia = ModelContainer::getModel("Companhia");
+       $companhia = ModelContainer::getModel("Companhia");
        
-        //$this->render('perfilCompanhia');
+        $this->render('perfilCompanhia');
     }
 
     public function pesquisarViagem(){
@@ -46,6 +46,26 @@ class AppController extends Action{
     public function formPesquisa(){
 
         $this->render('formPesquisa');
+    }
+
+    public function cadastrarViagem(){
+
+        session_start();
+
+        $viagem = ModelContainer::getModel('Viagem');
+
+        $viagem->__set('id_Companhia', $_SESSION['id']);
+        $viagem->__set('origem', $_POST['origem']);
+        $viagem->__set('destino', $_POST['destino']);
+        $viagem->__set('horaOrigem', $_POST['horaOrigem']);
+        $viagem->__set('horaDestino', $_POST['horaDestino']);
+        $viagem->__set('dataOrigem', $_POST['dataOrigem']);
+        $viagem->__set('valorPassagem', $_POST['valorPassagem']);
+        $viagem->__set('nrPoltrona', $_POST['nrPoltrona']);
+
+        $viagem->salvar();
+
+        $this->render('perfilCompanhia');
     }
 
 }

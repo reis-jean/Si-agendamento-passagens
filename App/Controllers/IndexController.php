@@ -62,8 +62,6 @@ class IndexController extends Action {
 		}
 	}
 
-
-	
 	//cadastro companhia
 	public function inscreverseCompanhia(){
 		$this->view->usuario = array(

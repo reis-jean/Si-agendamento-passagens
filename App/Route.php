@@ -20,7 +20,7 @@ class Route extends Bootstrap {
 			'controller' => 'indexController',
 			'action' => 'inscreverse'
 		);
-		$this->setRoutes($routes);
+		
 
 		$routes['registrar'] = array(
 			'route' => '/registrar',
@@ -34,7 +34,7 @@ class Route extends Bootstrap {
 			'controller' => 'indexController',
 			'action' => 'inscreverseCompanhia'
 		);
-		$this->setRoutes($routes);
+		
 
 
 		$routes['registrarCompanhia'] = array(
@@ -100,8 +100,12 @@ class Route extends Bootstrap {
 			'controller' => 'AppController',
 			'action' => 'formPesquisa'
 		);
-		
-		
+
+		$routes['cadastrarViagem'] = array(
+			'route' => '/cadastrarViagem',
+			'controller' => 'AppController',
+			'action' => 'cadastrarViagem'
+		);
 		
 		$this->setRoutes($routes);
 	}

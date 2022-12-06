@@ -14,27 +14,24 @@
             <div id="abrirModal" class="modal">
                 <div>
                     <a href="#fechar" title="Fechar" class="fechar">x</a>
-                    <form id="cadastroViagem" action="">
-                        <input type="text" placeholder="Origem">
-                        <input type="text" placeholder="Destino">
+                    <?php print_r($_SESSION['id']) ?>
+                    <form id="cadastroViagem" action="/cadastrarViagem" method="post">
+                        <input type="text" name="origem" placeholder="Origem">
+                        <input type="text" name="destino" placeholder="Destino">
                         <div>
                             <span>Data da Ida:</span>
-                            <input type="date" placeholder="dataIda">                    
-                        </div>
-                        <div>
-                            <span>Data da Volta: </span>
-                            <input type="date" placeholder="dataVolta">                    
+                            <input type="date" name="dataOrigem" placeholder="dataIda">                    
                         </div>
                         <div>
                             <span>Hora da saida: </span>
-                            <input type="time" placeholder="dataIda">                    
+                            <input type="time" name="horaOrigem" >                    
                         </div>
                         <div>
                             <span>Hora da chegada: </span>
-                            <input type="time" placeholder="dataVolta">                    
+                            <input name="horaDestino" type="time">                    
                         </div>
-                        <input type="number" placeholder="Valor da Passagem"> 
-                        <input type="number" placeholder="Quantidade de Poltronas">                                       
+                        <input type="number" step="0.01" name="valorPassagem" min="0.01" placeholder="Valor da Passagem"> 
+                        <input type="number" name="nrPoltrona" placeholder="Quantidade de Poltronas">                                       
                         <button type="submit">Cadastrar</button>
                     </form>
                 </div>
