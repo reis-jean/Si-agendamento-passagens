@@ -45,7 +45,25 @@ class Viagem extends Model{
 
     public function getAll(){
 
-        $query = "select id, id_Companhia, origem, destino,  from viagens";
+        $query = "select id, id_Companhia, origem, destino,  from viagens
+                select 
+                t.id, 
+                t.id_Companhia,
+                u.nome,
+                t.origem, 
+                DATE_FORMAT(t.dataCriacao, '%d/%m/%Y %H:%i') as dataCriacao
+            from 
+                viagens as t
+                left join companhia as u on (t.id_Companhia = u.id)
+            where 
+                t.id_Companhia = :id_Companhia";
+
+        
+        $stmt = $this->db->prepare($query);
+		$stmt->bindValue(':id_Companhia', $this->__get('id_Companhia'));
+		$stmt->execute();
+
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
 
