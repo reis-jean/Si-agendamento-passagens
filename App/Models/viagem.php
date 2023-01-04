@@ -45,18 +45,18 @@ class Viagem extends Model{
 
     public function getAll(){
 
-        $query = "select id, id_Companhia, origem, destino,  from viagens
-                select 
-                t.id, 
-                t.id_Companhia,
-                u.nome,
-                t.origem, 
-                DATE_FORMAT(t.dataCriacao, '%d/%m/%Y %H:%i') as dataCriacao
+        $query = "
+            select 
+                u.id, 
+                u.id_Companhia,
+                u.origem, 
+                u.destino, 
+                t.razao
             from 
-                viagens as t
-                left join companhia as u on (t.id_Companhia = u.id)
+                viagens as u
+                left join companhia as t on (u.id_Companhia = t.id) 
             where 
-                t.id_Companhia = :id_Companhia";
+                id_Companhia = :id_Companhia";
 
         
         $stmt = $this->db->prepare($query);

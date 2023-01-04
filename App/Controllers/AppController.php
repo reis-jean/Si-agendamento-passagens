@@ -1,11 +1,42 @@
 <?php
 namespace App\Controllers;
 
+
 use MF\Controller\Action;
-use Mf\Controller\Container;
 use MF\Model\Container as ModelContainer;
 
 class AppController extends Action{
+
+    public function perfilCompanhia(){
+        
+        session_start();
+        
+        if($_SESSION['id'] && $_SESSION['razao']){
+
+            //recuperando viagens
+            $viagem = ModelContainer::getModel("Viagem");
+            $viagem->__set('id_Companhia', $_SESSION['id']);
+
+            $viagens = $viagem->getAll();
+            $this->view->viagens = $viagens;
+
+            $usuario = ModelContainer::getModel("Companhia");
+            $usuario->__set('id', $_SESSION['id']);
+
+
+            $this->render('perfilCompanhia');
+        
+        }else{
+            header('Location: /?login=erro');
+        }
+
+        
+
+
+        $this->render('perfilCompanhia');
+    }
+
+    
 
     public function perfil(){
         $this->validarAutenticacao();
@@ -22,21 +53,7 @@ class AppController extends Action{
 
     }
    
-    public function perfilCompanhia(){
-
-        session_start();
-
-        if($_SESSION['id'] && $_SESSION['razao']){
-            $this->render('perfilCompanhia');
-        }else{
-            header('Location: /?login=erro');
-        }
-
-        
-       $companhia = ModelContainer::getModel("Companhia");
-       
-        $this->render('perfilCompanhia');
-    }
+    
 
     public function pesquisarViagem(){
 
@@ -65,7 +82,15 @@ class AppController extends Action{
 
         $viagem->salvar();
 
-        $this->render('perfilCompanhia');
+        header('Location: /perfilCompanhia');
+    }
+
+    public function getViagem(){
+        
+
+              
+
+
     }
 
 }

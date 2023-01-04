@@ -250,40 +250,8 @@ header{
 
 }
 
-@media only screen and  (max-width: 730px){
-    
-    #banner img {
-        display: none;
-    }
-    #tituloBaner{
-        width: 80%;
-    }
-    #tituloBaner span{
-        font-size: 1.5em;
-        text-align: right;
-    }
-    #rodape{
-        display: flex;
-        flex-direction: column;
-    }
-    #rodape nav h3{
-    margin-top: 2%;
-    margin-bottom: 0%;
-    }
-}
+/*modal tela de cadastro*/
 
-
-@media only screen and  (max-width: 560px){
-    
-    
-#logo {
-    display: none;
-}
-header{
-    justify-content: flex-end;
-
-}
-}
 .modal {
     position: fixed;
     top: 0;
@@ -319,3 +287,59 @@ header{
     margin-top: 5px;
     font-size: 16px;
   }
+
+
+#box_area_viagens{
+    width: 90%;
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    flex-wrap: wrap;
+    margin: 5px auto;
+    background-color: #ccc;
+    border: 1px solid grey;
+    border-radius: 20px;
+}
+.box_viagem{
+    width: 20%;
+    height: 100px;
+    padding: 2%;
+    margin: 2%;
+    border: 1px solid grey;
+
+}
+
+@media only screen and  (max-width: 730px){
+    
+    #banner img {
+        display: none;
+    }
+    #tituloBaner{
+        width: 80%;
+    }
+    #tituloBaner span{
+        font-size: 1.5em;
+        text-align: right;
+    }
+    #rodape{
+        display: flex;
+        flex-direction: column;
+    }
+    #rodape nav h3{
+    margin-top: 2%;
+    margin-bottom: 0%;
+    }
+}
+
+
+@media only screen and  (max-width: 560px){
+    
+    
+#logo {
+    display: none;
+}
+header{
+    justify-content: flex-end;
+
+}
+}

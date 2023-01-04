@@ -40,11 +40,20 @@
         <div class="cards">
             <h1>Dashborading de vendas</h1>
         </div>
-
     </section>
-    <h1>Login Realizado com sucesso!</h1>
-    <h1>Companhia</h1>
-   
+    <section>
+    <div id="box_area_viagens">
+            
+            <?php foreach($this->view->viagens as $id_viagem => $viagem) { ?>
+                <div class="box_viagem">
+                    <p><?=$viagem['origem']?></p>
+                    <p><?=$viagem['destino']?></p>
+                    <p><?=$viagem['razao']?></p>
+                </div>
+            <?php }?>
+        </div>
+    </section>
+    
 </main>
 <footer id="rodape">
     <nav>
