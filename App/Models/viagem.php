@@ -50,7 +50,9 @@ class Viagem extends Model{
                 u.id, 
                 u.id_Companhia,
                 u.origem, 
-                u.destino, 
+                u.destino,
+                u.horaOrigem,
+                DATE_FORMAT(u.dataOrigem, '%d/%m/%Y') as dataOrigem, 
                 t.razao
             from 
                 viagens as u
@@ -58,6 +60,8 @@ class Viagem extends Model{
             where 
                 id_Companhia = :id_Companhia";
 
+        // echo $query;
+        // die();
         
         $stmt = $this->db->prepare($query);
 		$stmt->bindValue(':id_Companhia', $this->__get('id_Companhia'));

@@ -251,7 +251,6 @@ header{
 }
 
 
-
 /*modal tela de cadastro*/
 
 .modal {
@@ -305,9 +304,23 @@ header{
 .box_viagem{
     width: 20%;
     height: 100px;
+    display: flex;
     padding: 2%;
     margin: 2%;
     border: 1px solid grey;
+    border-radius: 10px;
+
+
+}
+.box_data_hora{
+    width: 45%;
+
+    background-color: #FFA300;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
 
 }
 

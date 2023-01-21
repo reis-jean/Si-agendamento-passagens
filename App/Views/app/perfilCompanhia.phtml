@@ -44,12 +44,16 @@
     </section>
     <section>
     <div id="box_area_viagens">
-            
             <?php foreach($this->view->viagens as $id_viagem => $viagem) { ?>
                 <div class="box_viagem">
-                    <p><?=$viagem['origem']?></p>
-                    <p><?=$viagem['destino']?></p>
-                    <p><?=$viagem['razao']?></p>
+                    <div class="box_cidades">
+                        <p>Origem: <?=$viagem['origem']?></p>
+                        <p>Destino: <?=$viagem['destino']?></p>
+                    </div>
+                    <div class="box_data_hora">
+                        <p>Data Saida: <?=$viagem['dataOrigem']?></p>
+                        <p>Hora Saida: <?=$viagem['horaOrigem']?></p>
+                    </div>
                 </div>
             <?php }?>
         </div>
