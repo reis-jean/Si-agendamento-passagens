@@ -43,7 +43,17 @@
         </div>
     </section>
     <section>
-    <div id="box_area_viagens">
+        <div id="Mensagem">
+            <?php if ($this->view->mensagemEdicao == "editado") { ?>
+                <small>Viagem Editada!</small>
+            <?php } elseif($this->view->mensagemEdicao == "apagado") { ?>            
+                <small>Viagem Apagada!</small>
+            <?php } ?>
+            <?php $_GET['mensagemEdicao'] = "TESTE";?>
+        </div>
+        <div id="box_area_viagens">
+                
+                
             <?php foreach($this->view->viagens as $id_viagem => $viagem) { ?>
                 <div class="box_viagem">
                     <div class="box_cidades">
@@ -53,10 +63,20 @@
                     <div class="box_data_hora">
                         <p>Data Saida: <?=$viagem['dataOrigem']?></p>
                         <p>Hora Saida: <?=$viagem['horaOrigem']?></p>
+                        <p>cod: <?=$viagem['id']?></p>
+                    </div>
+                    <div class="box_alterar">
+                        <a href="apagarViagem?id=<?=$viagem['id']?>">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>
+                        </a>
+                        <a href="EditarViagemPag?id=<?=$viagem['id']?>">
+                            <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                        </a>   
                     </div>
                 </div>
             <?php }?>
         </div>
+
     </section>
     
 </main>

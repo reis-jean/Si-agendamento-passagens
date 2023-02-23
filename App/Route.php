@@ -106,6 +106,26 @@ class Route extends Bootstrap {
 			'controller' => 'AppController',
 			'action' => 'cadastrarViagem'
 		);
+
+		$routes['EditarViagemPag'] = array(
+			'route' => '/EditarViagemPag',
+			'controller' => 'AppController',
+			'action' => 'EditarViagemPag'
+		);
+
+		$routes['EditarViagem'] = array(
+			'route' => '/EditarViagem',
+			'controller' => 'AppController',
+			'action' => 'EditarViagem'
+		);
+
+		$routes['apagarViagem'] = array(
+			'route' => '/apagarViagem',
+			'controller' => 'AppController',
+			'action' => 'apagarViagem'
+		);
+
+
 		
 		$this->setRoutes($routes);
 	}

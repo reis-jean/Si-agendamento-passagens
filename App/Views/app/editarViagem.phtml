@@ -1,0 +1,61 @@
+<header>
+    <div id="logo">
+        <img src="/img/logo-topbus.png" alt="">
+    </div>
+    <nav id="menu">
+        <a href="/perfilCompanhia">Voltar</a>
+    </nav>
+</header>
+<main>
+    <form id="cadastroViagem" action="/EditarViagem?id=<?=$this->view->dadosViagem[0]['id']?>" method="post">
+        <input  value="<?=$this->view->dadosViagem[0]['origem']?>" type="text" name="origem" placeholder="Origem">
+        <input value="<?=$this->view->dadosViagem[0]['destino']?>"  type="text" name="destino" placeholder="Destino">
+        <div>
+            <span>Data da Ida:</span>
+            <input value="<?=$this->view->dadosViagem[0]['dataOrigem']?>" name="dataOrigem" placeholder="data da ida">                    
+        </div>
+        <div>
+            <span>Hora da saida: </span>
+            <input value="<?=$this->view->dadosViagem[0]['horaOrigem']?>"  name="horaOrigem" placeholder="Hora da saida">                    
+        </div>
+        <div>
+            <span>Hora da chegada: </span>
+            <input value="<?=$this->view->dadosViagem[0]['horaOrigem']?>" name="horaDestino" placeholder="Hora da Chegada">                    
+        </div>
+        <input value="<?=$this->view->dadosViagem[0]['valorPassagem']?>"  type="number" step="0.01" name="valorPassagem" min="0.01" placeholder="Valor da Passagem"> 
+        <input type="number" value="<?=$this->view->dadosViagem[0]['nrPoltrona']?>" name="nrPoltrona" placeholder="Quantidade de Poltronas">                                       
+        <button type="submit">Alterar dados da viagem</button>
+    </form>
+    
+</main>
+<footer id="rodape">
+    <nav>
+        <h3>Institucional</h3>
+        <a href="">Aplicativo</a>
+        <a href="">Política de Privacidade</a>
+        <a href="">Termos de Uso</a>
+        <a href="">Política de Cookies</a>
+    </nav>
+    <nav>
+        <h3>Categorias</h3> 
+        <a href="">Destinos</a>
+        <a href="">Glossário</a>
+        <a href="">Rodoviárias</a>
+        <a href="">Viações</a>
+    </nav>
+    <nav>
+        <h3>Business</h3> 
+        <a href="">Programa de Afiliados</a>
+        <a href="">Parcerias</a>
+        <a href="">App Android</a>
+        <a href="">App IOS</a>
+    </nav>
+    <div >
+        <nav id="sac">
+            <h2>  Tem duvidas? </h2>
+            <a href="">🎧 Entre em contato conosco</a>
+            <p>De segunda à sexta das 09h às 18h. Sábado, domingo e feriado das 09h às 16h.</p>
+        </nav>
+    </div>
+</footer>
+    
