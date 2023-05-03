@@ -54,13 +54,21 @@ class AppController extends Action{
    
     public function pesquisarViagem(){
 
-        $this->render('pesquisarViagem');
-    }
+        session_start();
 
-    public function formPesquisa(){
+        $viagem = ModelContainer::getModel('Viagem');
 
-        $this->render('formPesquisa');
+        $viagem->__set('origem', $_POST['origem']);
+        $viagem->__set('destino', $_POST['destino']);
+
+        $viagens = $viagem ->pesquisarViagem();
+
+        $this->view->viagens = $viagens;
+        
+        $this->render('perfil');
+        
     }
+    
 
     public function cadastrarViagem(){
 
@@ -132,10 +140,33 @@ class AppController extends Action{
         $viagem-> __set('id', $_GET['id']);
 
         $viagem->apagarViagem();
-        
+         
         header('Location: /perfilCompanhia?mensagemEdicao=apagado');
 
     }
+
+    public function reservarViagem(){
+
+        $this->validarAutenticacao();
+        
+        $viagem = ModelContainer::getModel('Viagem');
+
+        $viagem->__set('id', $_GET['id']);
+        $viagem->__set('id_Companhia', $_GET['id_Companhia']);
+
+        $this->view->viagem = $viagem->getId();
+
+        $this->render('reservarViagem');
+        
+    }
+
+    public function cadastrarReservar(){
+
+        echo "Reservar Viagem";
+        
+    }
+
+
 
 }
 

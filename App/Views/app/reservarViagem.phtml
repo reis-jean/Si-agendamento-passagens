@@ -1,0 +1,36 @@
+<header>
+    <div id="logo">
+        <img src="/img/logo-topbus.png" alt="">
+    </div>
+    <nav id="menu">
+        <p>Bem vindo(a) <?php print_r($_SESSION['nome']) ?></p>
+        <a href="">Minhas Viagens</a>
+        <a href="/sair">Sair</a>
+    </nav>
+</header>
+<main>
+    <section id="BoxViagem">
+        
+        <div>
+            <form id="cadastroViagem" action="/cadastrarReservar" method="post">
+                <div>
+                    <p>Saida: <?=$this->view->viagem['0']['origem'] ?> Destino: <?=$this->view->viagem['0']['destino'] ?> </p>
+                    <hr>
+                    <p>horario de Partida: <?=$this->view->viagem['0']['horaOrigem'] ?> / Horario da chegado: <?=$this->view->viagem['0']['HoraDestino'] ?> </p>
+                    <p>Valor da Passagem: R$<?=$this->view->viagem['0']['valorPassagem'] ?></p>
+                    <p>Escolha a Quantidade de Poltronas: <input type="number" name="nrPoltrona"></p>
+                    
+                </div>
+                                                          
+                <button type="submit">Reservar</button>
+            </form>
+        </div>
+    </section>
+
+</main>
+<!-- <footer id="rodape">
+    <div id="logo">
+        <img src="/img/logo-topbus.png" alt="">
+    </div>
+</footer> -->
+        

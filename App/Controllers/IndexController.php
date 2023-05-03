@@ -33,6 +33,8 @@ class IndexController extends Action {
 		$usuario->__set('nome', $_POST['nome']);
 		$usuario->__set('email', $_POST['email']);
 		$usuario->__set('senha', md5($_POST['senha']));
+
+		$this->view->erroCadastro = isset($_GET['erroCadastro']) ? $_GET['erroCadastro'] : '';
 		
 		if($usuario->validarCadastro() == false){
 

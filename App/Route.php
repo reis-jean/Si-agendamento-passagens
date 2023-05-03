@@ -95,12 +95,8 @@ class Route extends Bootstrap {
 			'action' => 'pesquisarViagem'
 		);
 
-		$routes['formPesquisa'] = array(
-			'route' => '/formPesquisa',
-			'controller' => 'AppController',
-			'action' => 'formPesquisa'
-		);
-
+		
+		
 		$routes['cadastrarViagem'] = array(
 			'route' => '/cadastrarViagem',
 			'controller' => 'AppController',
@@ -125,6 +121,22 @@ class Route extends Bootstrap {
 			'action' => 'apagarViagem'
 		);
 
+		//reservar viagem
+		$routes['reservarViagem'] = array(
+			'route' => '/reservarViagem',
+			'controller' => 'AppController',
+			'action' => 'reservarViagem'
+		);
+
+
+		$routes['cadastrarReservar'] = array(
+			'route' => '/cadastrarReservar',
+			'controller' => 'AppController',
+			'action' => 'cadastrarReservar'
+		);
+
+
+		
 
 		
 		$this->setRoutes($routes);

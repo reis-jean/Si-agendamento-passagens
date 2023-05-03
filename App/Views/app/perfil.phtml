@@ -1,59 +1,78 @@
 
-    <header>
-        <div id="logo">
-            <img src="/img/logo-topbus.png" alt="">
+<header>
+    <div id="logo">
+        <img src="/img/logo-topbus.png" alt="">
+    </div>
+    <nav id="menu">
+        <p>Bem vindo(a) <?php print_r($_SESSION['nome']) ?></p>
+        <a href="">Minhas Viagens</a>
+        <a href="/sair">Sair</a>
+    </nav>
+</header>
+<main>
+    <section id="banner">
+        <div class="cards">
+            <h1>Viagens com preços Exclusivos </h1>
         </div>
-        <nav id="menu">
-            <p>Bem vindo(a) <?php print_r($_SESSION['nome']) ?></p>
-            <a href="">Minhas Viagens</a>
-            <a href="/sair">Sair</a>
-        </nav>
-    </header>
-    <main>
-        <section id="banner">
-            <div class="cards ">
-                <h1>Viagens com preços Exclusivos </h1>
-            </div>
-        </section>
-        <section id="bannerPesquisa">
-            <div id="cardformPesquisa">
-                <object data="formPesquisa" type=""></object>
-            </div>
+    </section>
+    <section id="bannerPesquisa">
+        <form id="formPesquisa" action="/pesquisarViagem" method="post">
+            <input type="text" name="origem" placeholder="Origem">
+            <input type="text" name="destino" placeholder="Destino">
+            <button type="submit">Pesquisar</button>
+        </form>
+    </section>
+    <section>
+    <div id="boxSearchViagens">
+        <?php if(isset($this->view->viagens)) {
+                foreach($this->view->viagens as $id_viagem => $viagem) {?>
+                <div class="boxDadosViagem">
+                    <p class="dadoViagem">Origem: <?=$viagem['origem']?></p>
+                    <p class="dadoViagem" >Destino: <?=$viagem['destino']?></p>
+                    <p class="dadoViagem" >Hora da saida: <?=$viagem['horaOrigem']?></p>
+                    <a class="btnReservar" href="/reservarViagem?id=<?=$viagem['id']?>&id_Companhia=<?=$viagem['id_Companhia']?>">Reservar</a>
+                    
+                </div>
+                
+        <?php } } else{ ?>
+            <p>Pesquise uma viagem</p>
+        <?php } ?>
+
+    </div>
         </section>
     </main>
 
 
 
     <footer id="rodape">
-    
-    <nav>
-        <h3>Institucional</h3>
-        
-        <a href="">Aplicativo</a>
-        <a href="">Política de Privacidade</a>
-        <a href="">Termos de Uso</a>
-        <a href="">Política de Cookies</a>
-    </nav>
-    <nav>
-        <h3>Categorias</h3> 
-        <a href="">Destinos</a>
-        <a href="">Glossário</a>
-        <a href="">Rodoviárias</a>
-        <a href="">Viações</a>
-    </nav>
-    <nav>
-        <h3>Business</h3> 
-        <a href="">Programa de Afiliados</a>
-        <a href="">Parcerias</a>
-        <a href="">App Android</a>
-        <a href="">App IOS</a>
-    </nav>
-    <div >
-        <nav id="sac">
-            <h2>  Tem duvidas? </h2>
-            <a href="">🎧 Entre em contato conosco</a>
-            <p>De segunda à sexta das 09h às 18h. Sábado, domingo e feriado das 09h às 16h.</p>
+        <nav>
+            <h3>Institucional</h3>
+            
+            <a href="">Aplicativo</a>
+            <a href="">Política de Privacidade</a>
+            <a href="">Termos de Uso</a>
+            <a href="">Política de Cookies</a>
         </nav>
-    </div>
-</footer>
-    
+        <nav>
+            <h3>Categorias</h3> 
+            <a href="">Destinos</a>
+            <a href="">Glossário</a>
+            <a href="">Rodoviárias</a>
+            <a href="">Viações</a>
+        </nav>
+        <nav>
+            <h3>Business</h3> 
+            <a href="">Programa de Afiliados</a>
+            <a href="">Parcerias</a>
+            <a href="">App Android</a>
+            <a href="">App IOS</a>
+        </nav>
+        <div >
+            <nav id="sac">
+                <h2>  Tem duvidas? </h2>
+                <a href="">🎧 Entre em contato conosco</a>
+                <p>De segunda à sexta das 09h às 18h. Sábado, domingo e feriado das 09h às 16h.</p>
+            </nav>
+        </div>
+    </footer>
+        

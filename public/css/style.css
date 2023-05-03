@@ -95,6 +95,10 @@ header{
     margin: 2%;
     border-right: 4px solid #fffb01;
     border-bottom: 4px solid #fffb01;
+}
+.cards h1{
+
+    color: #fff;
 
 }
 
@@ -211,28 +215,18 @@ header{
     box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.2);
 }
 #bannerPesquisa{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-#cardformPesquisa{
-    width: 90%;
+    width: 80%;
+    margin: 5px auto;
     border-radius: 10px;
     background-color: #FFA300;
-    display: flex;
-    align-items: center;
-    margin-bottom: 2%;
 }
-#cardformPesquisa object{
-    width: 100%;
-}
+
 #formPesquisa{
     width: 100%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    margin-top: 3rem;
+    margin: 3rem auto;
 }
 
 #formPesquisa input{ 
@@ -240,15 +234,36 @@ header{
     height: 50px;    
     font-size: 1rem;
     border-radius: 3px;
+    padding-left: 10px;
 }
 
-#formPesquisa button{
+#formPesquisa button, .btnReservar{
     width: 20%;
     height: 50px;
     font-size: 0.8rem;
-    border-radius: 5px;
+    border-radius: 10px;
+}
+
+.boxDadosViagem{
+    width: 40%;
+    margin: 2%;
+    padding: 1%;
+    background-color: #FFA300;
+    border-radius: 10px;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.btnReservar{
+    padding: 1%;
+    background-color: #fff;
+    color: #FFA300;
+    margin-top: 10px;
+    align-self: flex-end;
 
 }
+
 
 
 /*modal tela de cadastro*/
@@ -289,17 +304,17 @@ header{
     font-size: 16px;
   }
 
+/* perfil companhia */
 
-
-#box_area_viagens{
+#box_area_viagens, #boxSearchViagens{
     width: 90%;
     display: flex;
     justify-content: space-around;
     align-content: center;
     flex-wrap: wrap;
     margin: 5px auto;
-    background-color: #ccc;
-    border: 1px solid grey;
+    border: 3px solid #fffb01;
+    box-shadow: 3px 3px 6px 0px rgba(189,189,189,1);
     border-radius: 20px;
 }
 .box_viagem{

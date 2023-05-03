@@ -60,9 +60,6 @@ class Viagem extends Model{
             where 
                 id_Companhia = :id_Companhia";
 
-        // echo $query;
-        // die();
-        
         $stmt = $this->db->prepare($query);
 		$stmt->bindValue(':id_Companhia', $this->__get('id_Companhia'));
 		$stmt->execute();
@@ -87,18 +84,27 @@ class Viagem extends Model{
     public function pesquisarViagem(){
 
         $query = "select 
-            u.id, 
-            u.id_Companhia,
-            u.origem, 
-            u.destino,
-            u.horaOrigem,
-            DATE_FORMAT(u.dataOrigem, '%d/%m/%Y') as dataOrigem, 
-            t.razao
+            id, 
+            id_Companhia,
+            origem, 
+            destino,
+            horaOrigem
         from 
-            viagens as u
-            left join companhia as t on (u.id_Companhia = t.id) 
+            viagens 
         where 
-            id_Companhia = :id_Companhia";
+            origem = :origem
+        and 
+            destino = :destino";
+        
+        $stmt = $this->db->prepare($query);
+        $stmt->bindValue(':origem', $this->__get('origem'));
+        $stmt->bindValue(':destino', $this->__get('destino'));
+
+        $stmt->execute();
+
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
+
     }
 
     //Buscar id
@@ -120,6 +126,7 @@ class Viagem extends Model{
         // die();
 		$stmt->execute();
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+
     }
     //editar Viagem
     public function editarViagem(){
