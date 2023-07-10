@@ -128,11 +128,18 @@ class Route extends Bootstrap {
 			'action' => 'reservarViagem'
 		);
 
-
-		$routes['cadastrarReservar'] = array(
-			'route' => '/cadastrarReservar',
+		// Cadastrar Reserva 
+		$routes['cadastrarReserva'] = array(
+			'route' => '/cadastrarReserva',
 			'controller' => 'AppController',
-			'action' => 'cadastrarReservar'
+			'action' => 'cadastrarReserva'
+		);
+
+
+		$routes['minhasViagens'] = array(
+			'route' => '/minhasViagens',
+			'controller' => 'AppController',
+			'action' => 'minhasViagens'
 		);
 
 

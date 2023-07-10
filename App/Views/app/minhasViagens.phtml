@@ -1,0 +1,33 @@
+<header>
+    <div id="logo">
+        <img src="/img/logo-topbus.png" alt="">
+    </div>
+    <nav id="menu">
+        <p>Bem vindo(a) <?php print_r($_SESSION['nome']) ?></p>
+        <a href="">Minhas Viagens</a>
+        <a href="/sair">Sair</a>
+    </nav>
+</header>
+<main>
+    <section id="BoxViagem">
+        
+        <div>
+            <p> Minhas viagens </p>
+            <?php foreach($this->view->reservas as $reserva) { ?>
+                <div class="boxDadosViagem">
+                    <p class="dadoViagem">Origem: <?=$reserva['id']?></p>
+                    <p class="dadoViagem" >Destino: <?=$reserva['id_viagem']?></p>
+                </div>
+                
+            <?php } ?>
+            <p><?php echo "<pre>"; print_r($this->view->reservas); echo "<pre/>";?> </p>
+        </div>
+    </section>
+
+</main>
+<!-- <footer id="rodape">
+    <div id="logo">
+        <img src="/img/logo-topbus.png" alt="">
+    </div>
+</footer> -->
+        

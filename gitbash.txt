@@ -1,0 +1,40 @@
+-Enviando arquivos ao git
+	Iniciar o git dentro na pasta
+	-> git init	
+	Mudar o nome da blanch(opcional)
+	-> git branch -M "main"
+	Enviar o arquivo para comitted
+	-> git add "nome do arquivo"
+	Enviar commit
+	-> git commit -m "mensagem"
+	conectar a diretorio para envio
+	-> git remote add origin "link https"
+	enviar os arquivo para o repositorio do git
+	->git push -u origin main
+	
+-Dando gitignore em arquivos
+	criar arquivo .gitignore
+	-> touch .gitignore
+	Adicionar o arquivo ao arquivo
+	-> echo nomedoarquivo >> .gitignore
+		(use padroes de descrição para adicionar 
+			mais de um arquivo ou diretorio).
+	ler o arquivo
+	->cat .gitignore
+	-criar o arquivo .gitignore global 
+		o git ignorara os arquivos decritos em todos os comits dados 
+		->git config --global core.excludesFile ~/.gitignore
+
+	-Exemplos de padrões de descrição
+		arqTeste => ignora o arquivo ou diretorio "arqTeste"
+		*.log    => ignora todos os aquivos com extensão .log
+		arq*     => ignora todos os arquivos iniciados com arq
+		?rq      => ignora todos os arquivos que tenha "rq" na sequencia.
+		dirTeste/=> ignora o diretorio dirTeste e seus arquivos 
+		**/dirTeste =>ignora todos os diretorios de nome dirTeste
+		!saida.log => não ignora o arquivo saida.log
+
+git status => status do local
+ls => mostrar todos os arquivos
+ls -a => mostra arquivos ocultos 
+clear => limpa a tela 

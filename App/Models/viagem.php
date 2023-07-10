@@ -107,7 +107,7 @@ class Viagem extends Model{
 
     }
 
-    //Buscar id
+    //Buscar por id e Companhia
     public function getId(){
         $query = "
             Select 
