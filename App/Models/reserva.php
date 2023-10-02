@@ -26,33 +26,39 @@ class Reserva extends Model{
     }
 
     public function salvarReserva(){
-        $query = "insert into reserva( 
-            id_viagem, id_passageiro, qte_passagem, id_Companhia, origem, destino, horaOrigem, HoraDestino, dataOrigem, valorPassagem, 
-            )values(
-            :id_viagem, :id_passageiro, :qte_passagem, :id_Companhia, :origem, :destino, :horaOrigem, :HoraDestino, :dataOrigem, :valorPassagem)";
+        $query = "INSERT INTO reservas (
+            id_viagem, id_passageiro, qte_passagem, id_Companhia, origem, destino, horaOrigem, HoraDestino, dataOrigem, valorPassagem
+        ) VALUES (
+            :id_viagem, :id_passageiro, :qte_passagem, :id_Companhia, :origem, :destino, :horaOrigem, :HoraDestino, :dataOrigem, :valorPassagem
+        );";
+       
 
+        
         $stmt = $this->db->prepare($query);
-        $stmt -> bindValue(':id_viagem', $this->__get('id_viagem'));
-        $stmt -> bindValue(':id_Companhia', $this->__get('id_Companhia'));
-        $stmt -> bindValue(':id_passageiro', $this->__get('id_passageiro'));
-        $stmt -> bindValue(':origem', $this->__get('origem'));
-        $stmt -> bindValue(':destino', $this->__get('destino'));
-        $stmt -> bindValue(':horaOrigem', $this->__get('horaOrigem'));
-        $stmt -> bindValue(':HoraDestino', $this->__get('HoraDestino'));
-        $stmt -> bindValue(':dataOrigem', $this->__get('dataOrigem'));
-        $stmt -> bindValue(':valorPassagem', $this->__get('valorPassagem'));
+        $stmt->bindValue(':id_viagem', $this->__get('id_viagem'));
+        $stmt->bindValue(':id_passageiro', $this->__get('id_passageiro'));
+        $stmt->bindValue(':qte_passagem', $this->__get('qte_passagem'));
+        $stmt->bindValue(':id_Companhia', $this->__get('id_Companhia'));
+        $stmt->bindValue(':origem', $this->__get('origem'));
+        $stmt->bindValue(':destino', $this->__get('destino'));
+        $stmt->bindValue(':horaOrigem', $this->__get('horaOrigem'));
+        $stmt->bindValue(':HoraDestino', $this->__get('HoraDestino'));
+        $stmt->bindValue(':dataOrigem', $this->__get('dataOrigem'));
+        $stmt->bindValue(':valorPassagem', $this->__get('valorPassagem'));
+        
         
         $stmt->execute();
         return $this;
     }
-
+    
+    
     
     public function getAll(){
 
         $query = "select 
             *
         from 
-            reserva 
+            reservas 
         where 
             id_passageiro = :id_passageiro";
         
@@ -61,10 +67,6 @@ class Reserva extends Model{
 
         $stmt->execute();
 
-        // echo "<pre>";
-        // print_r($stmt->fetchAll(\PDO::FETCH_ASSOC));
-        // echo "<pre/>";
-        // die();
 
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
 

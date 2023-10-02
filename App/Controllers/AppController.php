@@ -164,18 +164,11 @@ class AppController extends Action{
         $reservas = $reserva ->getAll();
         $this->view->reservas = $reservas;
                    
-        // echo "<pre>";
-        // print_r($this->view->reservas);
-        // echo "<pre/>";
         
         $this->render('minhasViagens');
     }
 
     public function cadastrarReserva(){
-
-        // echo $_POST['nrPoltrona'];
-        // echo $_GET['id'];
-        // echo $_GET['id_Companhia'];
 
         $this->validarAutenticacao();
 
@@ -183,31 +176,32 @@ class AppController extends Action{
         $viagem->__set('id_Companhia', $_GET['id_Companhia']);
         $viagem->__set('id', $_GET['id']);
 
+        
         $dadosViagem = $viagem->getId();
         $this->view->dadosViagem = $dadosViagem;
 
 
-        echo "<pre>";
-            print_r($this->view->dadosViagem );
-        echo "<pre/>";
+ 
 
         $reserva = ModelContainer::getModel('Reserva');
 
-        $reserva ->__set('id_viagem', $_GET['id']);
+        $reserva ->__set('id_viagem', $dadosViagem[0]['id']);
         $reserva->__set('id_passageiro', $_SESSION['id']);
-        $reserva->__set('id_Companhia', $_GET['id_Companhia']);
-        $reserva->__set('origem', $_POST['origem']);
-        $reserva->__set('destino', $_POST['destino']);
-        $reserva->__set('horaOrigem', $_POST['horaOrigem']);
-        $reserva->__set('HoraDestino', $_POST['HoraDestino']);
-        $reserva->__set('dataOrigem', $_POST['dataOrigem']);
-        $reserva->__set('valorPassagem', $_POST['valorPassagem']);
+        $reserva->__set('qte_passagem', $_POST['qte_passagem']);
+        $reserva->__set('id_Companhia', $dadosViagem[0]['id_Companhia']);
+        $reserva->__set('origem', $dadosViagem[0]['origem']);
+        $reserva->__set('destino', $dadosViagem[0]['destino']);
+        $reserva->__set('horaOrigem', $dadosViagem[0]['horaOrigem']);
+        $reserva->__set('HoraDestino', $dadosViagem[0]['HoraDestino']);
+        $reserva->__set('dataOrigem', $dadosViagem[0]['dataOrigem']);
+        $reserva->__set('valorPassagem', $dadosViagem[0]['valorPassagem']);
+        
 
-        $reserva->salvarReserva();
+        $dadosReserva = $reserva->salvarReserva();
+
+        
         $this->render('perfil');
 
-        // $reserva = ModelContainer::getModel('Reserva');
-        // $reserva->set('id_viagem', $_POST['id_viagem']);
 
     }
 

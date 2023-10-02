@@ -32,16 +32,65 @@ header{
     width: 100%;
 }
 
+
+.menu-hamburguer {
+    position: relative;
+    padding-right: 45px;
+  }
+  
+  .menu-icon {
+    cursor: pointer;
+    font-size: 24px;
+    padding: 4px 10px;
+    position: absolute;
+   
+  }
+  
+  #menu-toggle {
+    display: none;
+  }
+  
+  .menu {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    background-color: #fff; /* Adicionei um fundo branco para o menu */
+    position: absolute;
+    top: 40px; /* Ajuste a posição vertical conforme necessário */
+    right: 0;
+    border: 1px solid #ccc;
+    z-index: 100;
+    width: 200px; /* Ajuste a largura conforme necessário */
+  }
+  
+  .menu li {
+    margin: 10px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #333;
+    font-weight: bold;
+    display: block;
+  }
+  
+  #menu-toggle:checked + .menu {
+    display: block;
+  }
+
 #menu a , #banner a{
+   
+
+}
+.buttonPrincipal{
     color: #fff;
     background-color: #FFA300;
     padding: 10px;
     border-radius: 15px;
     border-bottom: 3px solid #fffb01;
     border-right: 3px solid #fffb01;
-
 }
-
 
 #menu{
     display: flex;
@@ -88,19 +137,21 @@ header{
     justify-content: space-around;
 }
 .cards {
-    background-color: #FFA300;
     color: #fff;
     border-radius: 10px;
     padding: 2%;
     margin: 2%;
+    background-color: #FFA300;
     border-right: 4px solid #fffb01;
     border-bottom: 4px solid #fffb01;
+    width: 30%;
 }
 .cards h1{
 
     color: #fff;
 
 }
+
 
 #mais-procurados {
     display: flex;
@@ -268,13 +319,15 @@ header{
 
 /*modal tela de cadastro*/
 
+
+
 .modal {
     position: fixed;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgb(255, 255, 255, 0.8);
+    background: rgb(0, 0, 0, 0.8);
     z-index: 99999;
     opacity:0;
     -webkit-transition: opacity 400ms ease-in;
@@ -288,20 +341,62 @@ header{
   }
   .modal > div {
     width: 60%;
+    height: 60%;
     position: relative;
     margin: 10% auto;
     padding: 15px 20px;
-    background: rgb(163, 161, 161);
+    background: white;
+    border-radius: 8px;
   }
 
+  
+  #cadastroViagem {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Divide o formulário em duas colunas */
+    gap: 10px; /* Espaçamento entre os elementos */
+  }
+  
+  #cadastroViagem div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #cadastroViagem div span {
+    margin-bottom: 5px; /* Espaçamento entre o texto e o input */
+  }
+  
+  #cadastroViagem input,
+  #cadastroViagem button {
+    padding: 5px; /* Espaçamento interno dos elementos */
+    border: 1px solid #ccc; /* Borda para destacar os elementos */
+    border-radius: 5px; /* Cantos arredondados */
+  }
+  
+  #cadastroViagem button {
+    background-color: #ffa300; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    cursor: pointer; /* Transforma o cursor em uma mão ao passar sobre o botão */
+    margin-left: 0;
+    
+  }
+
+  .button-container{
+    align-self: center;
+  }
+  
   .fechar {
     position: relative;
     bottom: 20;
     left: 75%;
     width: 10%;
+    color: white;
+    font-size: 10px;
     text-align: center;
     margin-top: 5px;
     font-size: 16px;
+    background-color: #FFA300;
+    border-radius: 25px;
+    padding: 8px 12px;
   }
 
 /* perfil companhia */
@@ -384,9 +479,7 @@ header{
   }
   
 
-#cadastroViagem{
-    margin: 1% 10%;
-}
+
 @media only screen and  (max-width: 730px){
     
     #banner img {
@@ -411,8 +504,6 @@ header{
 
 
 @media only screen and  (max-width: 560px){
-    
-    
 #logo {
     display: none;
 }

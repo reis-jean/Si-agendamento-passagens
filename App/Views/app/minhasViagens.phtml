@@ -15,19 +15,20 @@
             <p> Minhas viagens </p>
             <?php foreach($this->view->reservas as $reserva) { ?>
                 <div class="boxDadosViagem">
-                    <p class="dadoViagem">Origem: <?=$reserva['id']?></p>
-                    <p class="dadoViagem" >Destino: <?=$reserva['id_viagem']?></p>
+                    <p class="dadoViagem">Codigo da reserva: <?=$reserva['id']?></p>
+                    <p class="dadoViagem" >Codigo da Viagem: <?=$reserva['id_viagem']?></p>
+                    <p class="dadoViagem" >Origem: <?=$reserva['origem']?></p>
+                    <p class="dadoViagem" >Destino: <?=$reserva['destino']?></p>
+                    <p class="dadoViagem" >Horario da Saida: <?=$reserva['horaOrigem']?></p>
+                    <p class="dadoViagem" >Horario da Chegada: <?=$reserva['HoraDestino']?></p>
+                    <p class="dadoViagem" >Quantidade de reservas: <?=$reserva['qte_passagem']?></p>
                 </div>
                 
             <?php } ?>
-            <p><?php echo "<pre>"; print_r($this->view->reservas); echo "<pre/>";?> </p>
+            <p>
+                
+            <!-- <?php echo "<pre>"; print_r($this->view->reservas); echo "<pre/>";?> </p> -->
         </div>
     </section>
 
 </main>
-<!-- <footer id="rodape">
-    <div id="logo">
-        <img src="/img/logo-topbus.png" alt="">
-    </div>
-</footer> -->
-        

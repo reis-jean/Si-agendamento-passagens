@@ -4,42 +4,59 @@
     </div>
     <nav id="menu">
         <p>Bem vindo(a) Companhia <?php print_r($_SESSION['razao']) ?></p>
-        <a href="/sair">Sair</a>
+        <div class="menu-hamburguer">
+            <label for="menu-toggle" class="menu-icon">&#9776;
+            <input type="checkbox" id="menu-toggle" />
+            </label>
+            <!-- <label for="menu-toggle" class="menu-icon">&#9776;</label> -->
+            <ul class="menu" id="menu-items">
+                <li><a class="buttonPrincipal" href="#abrirModal">Cadastrar Viagem</a></li>
+                <li><a class="buttonPrincipal" href="#">Dashboard de Vendas</a></li>
+            </ul>
+        </div>
+        <a class="buttonPrincipal" href="/sair">Sair</a>
+      
+        
     </nav>
 </header>
 <main>
     <section id="banner">
-        <div class="cards">
-            <a class="" href="#abrirModal">Cadastrar Viagem</a>
-            <!-- Modal de cadastro -->
-            <div id="abrirModal" class="modal">
-                <div>
-                    <a href="#fechar" title="Fechar" class="fechar">x</a>
-                    <?php print_r($_SESSION['id']) ?>
-                    <form id="cadastroViagem" action="/cadastrarViagem" method="post">
+        <!-- Modal de cadastro -->
+        <div id="abrirModal" class="modal">
+            <div>
+                <a href="#fechar" title="Fechar" class="fechar">x</a>
+                <h2>Cadastro de Viagem</h2>
+                <form id="cadastroViagem" action="/cadastrarViagem" method="post">
+                    <div>
                         <input type="text" name="origem" placeholder="Origem">
-                        <input type="text" name="destino" placeholder="Destino">
-                        <div>
-                            <span>Data da Ida:</span>
-                            <input type="date" name="dataOrigem" placeholder="dataIda">                    
-                        </div>
-                        <div>
-                            <span>Hora da saida: </span>
-                            <input type="time" name="horaOrigem" >                    
-                        </div>
-                        <div>
-                            <span>Hora da chegada: </span>
-                            <input name="horaDestino" type="time">                    
-                        </div>
+                        <input type="text" name="destino" placeholder="Destino">                        
+                    </div>                    
+
+                    <div>
+                        <span>Data da Ida:</span>
+                        <input type="date" name="dataOrigem" placeholder="dataIda">   
+                    </div>
+                    
+                    <div>
+                        <span>Hora da saida: </span>
+                        <input type="time" name="horaOrigem">                    
+                    </div>
+                    <div>
+                        <span>Hora da chegada: </span>
+                        <input name="horaDestino" type="time">                    
+                    </div>
+                    <div>
                         <input type="number" step="0.01" name="valorPassagem" min="0.01" placeholder="Valor da Passagem"> 
-                        <input type="number" name="nrPoltrona" placeholder="Quantidade de Poltronas">                                       
-                        <button type="submit">Cadastrar</button>
-                    </form>
-                </div>
+                    </div>
+                    <div>
+                        <input type="number" name="nrPoltrona" placeholder="Quantidade de Poltronas"> 
+                    </div>
+                    
+                    <div class="button-container">
+                        <button  class="button-container" type="submit">Cadastrar</button>
+                    </div>                     
+                </form>
             </div>
-        </div>
-        <div class="cards">
-            <h1>Dashborading de vendas</h1>
         </div>
     </section>
     <section>
@@ -51,8 +68,8 @@
             <?php } ?>
             <?php $_GET['mensagemEdicao'] = "TESTE";?>
         </div>
+        <h1>Viagens Programadas</h1>
         <div id="box_area_viagens">
-                
                 
             <?php foreach($this->view->viagens as $id_viagem => $viagem) { ?>
                 <div class="box_viagem">
@@ -110,4 +127,23 @@
         </nav>
     </div>
 </footer>
+<script>
+
+document.addEventListener("DOMContentLoaded", function() {
+  const menuToggle = document.getElementById("menu-toggle");
+  const menuItems = document.getElementById("menu-items");
+
+  menuToggle.addEventListener("change", function() {
+    if (menuToggle.checked) {
+      menuItems.style.display = "block";
+    } else {
+      menuItems.style.display = "none";
+    }
+  });
+});
+
+
+
+
+</script>
     

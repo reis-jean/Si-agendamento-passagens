@@ -1,4 +1,10 @@
 <header>
+    <!-- <?php 
+        echo "<pre>";
+            print_r($_GET );
+        echo "<pre/>";  
+    ?> -->
+
     <div id="logo">
         <img src="/img/logo-topbus.png" alt="">
     </div>
@@ -18,10 +24,10 @@
                     <hr>
                     <p>horario de Partida: <?=$this->view->viagem['0']['horaOrigem'] ?> / Horario da chegado: <?=$this->view->viagem['0']['HoraDestino'] ?> </p>
                     <p>Valor da Passagem: R$<?=$this->view->viagem['0']['valorPassagem'] ?></p>
-                    <p>Escolha a Quantidade de Poltronas: <input type="number" name="nrPoltrona"></p>
+                    <p>Escolha a Quantidade de Poltronas: <input type="number" name="qte_passagem"></p>
                 </div>
                                                           
-                <button type="submit">Reservar</button>
+                <button type="submit">Reservar</button> 
             </form>
         </div>
     </section>
